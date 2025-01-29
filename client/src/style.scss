@@ -5,46 +5,87 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1, #fc6076);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
   .addHome {
-    padding: 10px;
+    padding: 12px 20px;
     margin-top: 20px;
     cursor: pointer;
     border: none;
-    background-color: teal;
+    background-color: rgba(0, 128, 128, 0.9);
     color: white;
     font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 128, 128, 1);
+      transform: scale(1.05);
+    }
   }
 
   h1 {
     margin-bottom: 50px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   .books {
     display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 
     .book {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
 
       img {
-        width: 200px;
-        height: 300px;
+        width: 250px;
+        height: 350px;
         object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
       }
 
       button {
-        padding: 3px 6px;
+        padding: 5px 10px;
         background-color: white;
         cursor: pointer;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
       }
+
       .delete {
         border: 1px solid rgb(245, 191, 191);
         color: rgb(242, 100, 100);
       }
+
       .update {
         border: 1px solid rgb(204, 204, 243);
         color: rgb(139, 139, 234);
@@ -56,25 +97,32 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 
-    input {
-      width: 250px;
-      padding: 10px;
+    input, textarea {
+      width: 280px;
+      padding: 12px;
+      border-radius: 6px;
       border: 1px solid gray;
-    }
-
-    textarea {
-      padding: 10px;
     }
 
     button {
       border: none;
-      padding: 10px;
-      background-color: white;
+      padding: 12px;
       background-color: teal;
       color: white;
       font-weight: bold;
       cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: darkcyan;
+        transform: scale(1.05);
+      }
     }
   }
 }
