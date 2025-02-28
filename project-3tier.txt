@@ -135,6 +135,9 @@ npm install dotenv
 
 sudo pm2 start index.js --name "backendApi"
 
+sudo pm2 startup
+sudo pm2 save
+
 
 -----------------step-4--------------------------
 
